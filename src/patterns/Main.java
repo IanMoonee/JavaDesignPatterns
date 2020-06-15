@@ -1,4 +1,8 @@
 package patterns;
+import patterns.Composite.Department;
+import patterns.Composite.FinancialDepartment;
+import patterns.Composite.HeadDepartment;
+import patterns.Composite.SalesDepartment;
 import patterns.factory.TCPConnection;
 import patterns.factory.TCPConnectionFactory;
 import patterns.proxy.Node;
@@ -25,5 +29,19 @@ public class Main {
         node.displayNodeIp();
         node.displayNodeIp();
         node.displayNodeIp();
+
+
+        //Composite Pattern Implementation
+
+        Department salesDep = new SalesDepartment(1, "Sales Department");
+
+        Department financialDep = new FinancialDepartment(2, "Financial Department");
+
+        HeadDepartment headDep = new HeadDepartment(3, "Head Department");
+
+        headDep.addDepartment(salesDep);
+        headDep.addDepartment(financialDep);
+        headDep.printDepartmentName();
+
     }
 }

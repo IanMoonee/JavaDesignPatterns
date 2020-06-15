@@ -1,3 +1,10 @@
-#Ignore 
-.idea
-.DS_Store
+#User-specific
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+
+#Generated files
+.idea/**/contentModel.xml
+
+#InteliJ specific
+out/
