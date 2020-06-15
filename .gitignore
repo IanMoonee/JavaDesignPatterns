@@ -8,3 +8,6 @@
 
 #InteliJ specific
 out/
+.idea/
+*.iml
+
