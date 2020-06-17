@@ -3,6 +3,8 @@ import patterns.Composite.Department;
 import patterns.Composite.FinancialDepartment;
 import patterns.Composite.HeadDepartment;
 import patterns.Composite.SalesDepartment;
+import patterns.Iterator.DistributionBox;
+import patterns.Iterator.DistroCollection;
 import patterns.factory.TCPConnection;
 import patterns.factory.TCPConnectionFactory;
 import patterns.proxy.Node;
@@ -42,6 +44,12 @@ public class Main {
         headDep.addDepartment(salesDep);
         headDep.addDepartment(financialDep);
         headDep.printDepartmentName();
+        // TODO : add an implementation of Singleton design pattern with Enum and add it to gitHub.
+
+        // Implementation of Iterator pattern
+        DistroCollection distroCollection = new DistroCollection();
+        DistributionBox distributionBox = new DistributionBox(distroCollection);
+        distributionBox.printAllDistros();
 
     }
 }
