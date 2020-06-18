@@ -15,26 +15,24 @@ public class Main {
 
     public static void main(String[] args)
     {
-        // Factory Pattern Implementation
-
+        // Factory Pattern
         TCPConnection tcp_connection = TCPConnectionFactory.getInstance("Unix");
         tcp_connection.connect();
 
-        // Singleton Pattern Implementation
+        // Singleton Pattern
         HwConnection hw_connection = HwConnection.getInstance();
 
         // the object below cannot be created because we already have one open connection!
         HwConnection hw_connection2 = HwConnection.getInstance();
 
-        //Proxy pattern Implementation
+        //Proxy pattern
         Node node = new ProxyNode(("192.168.1.1"));
         node.displayNodeIp();
         node.displayNodeIp();
         node.displayNodeIp();
 
 
-        //Composite Pattern Implementation
-
+        //Composite Pattern
         Department salesDep = new SalesDepartment(1, "Sales Department");
 
         Department financialDep = new FinancialDepartment(2, "Financial Department");
@@ -44,9 +42,8 @@ public class Main {
         headDep.addDepartment(salesDep);
         headDep.addDepartment(financialDep);
         headDep.printDepartmentName();
-        // TODO : add an implementation of Singleton design pattern with Enum and add it to gitHub.
 
-        // Implementation of Iterator pattern
+        // Iterator pattern
         DistroCollection distroCollection = new DistroCollection();
         DistributionBox distributionBox = new DistributionBox(distroCollection);
         distributionBox.printAllDistros();
