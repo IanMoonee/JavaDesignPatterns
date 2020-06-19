@@ -10,6 +10,7 @@ import patterns.factory.TCPConnectionFactory;
 import patterns.proxy.Node;
 import patterns.proxy.ProxyNode;
 import patterns.singleton.HwConnection;
+import patterns.singleton.SingletonEnum;
 
 public class Main {
 
@@ -24,6 +25,13 @@ public class Main {
 
         // the object below cannot be created because we already have one open connection!
         HwConnection hw_connection2 = HwConnection.getInstance();
+
+        //Singleton with Enum
+        SingletonEnum singletonEnum = SingletonEnum.INSTANCE;
+        // set two values and then print the value(only 1 value is stored at the instance)
+        singletonEnum.setValue(1);
+        singletonEnum.setValue(5);
+        System.out.println(singletonEnum.getValue());
 
         //Proxy pattern
         Node node = new ProxyNode(("192.168.1.1"));
